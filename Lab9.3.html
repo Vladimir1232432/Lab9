@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ревин</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <div>
+        <img src="dliazadania29.3.jpg" id="pole" style="width: 1500px; height: 710px; z-index: 1; position: absolute" onclick="DATA2()" />
+        <img src="dliazadania9.3.png" id="miach" style="width: 100px; height: 100px; border-radius: 50%; z-index: 2; position: absolute; background-color: white;transition:1.5s" />
+    </div>
+    <script>
+        var miach = document.getElementById("miach");
+        miach.style.left = 708 + 'px';
+        miach.style.top = 308 + 'px';
+        function DATA2(event) {
+            document.querySelector('#pole').onclick = function (event) {
+                var startX = miach.getBoundingClientRect().x;
+                var startY = miach.getBoundingClientRect().y;
+                console.log(Math.round(startX), Math.round(startY));
+                var GranicaMaxX = 1250;
+                var GranicaMinX = 50;
+                var GranicaMaxY = 650;
+                var GranicaMinY = 50;
+
+                var x = event.offsetX;
+                var y = event.offsetY;
+                var endX = x;
+                var endy = y;
+
+                if (x <= 750 && y <= 350) {
+                    var Timer = setInterval(function () {
+                        miach.style.left = (endX - 40) + 'px';
+                        miach.style.top = (endy - 40) + 'px';
+                        clearInterval(Timer);
+
+                    }, 25);
+
+                }
+                if (x > 750 && y <= 350) {
+                    var Timer = setInterval(function () {
+                        miach.style.left = (endX - 40) + 'px';
+                        miach.style.top = (endy - 40) + 'px';
+                        clearInterval(Timer);
+
+                    }, 25);
+
+                }
+                if (x <= 750 && y > 350) {
+                    var Timer = setInterval(function () {
+                        miach.style.left = (endX - 40) + 'px';
+                        miach.style.top = (endy - 40) + 'px';
+                        clearInterval(Timer);
+
+                    }, 25);
+
+                }
+                if (x > 750 && y > 350) {
+                    var Timer = setInterval(function () {
+                        miach.style.left = (endX - 40) + 'px';
+                        miach.style.top = (endy - 40) + 'px';
+                        clearInterval(Timer);
+
+                    }, 25);
+
+                }
+
+
+            }
+        }
+    </script>
+</body>
+</html>
